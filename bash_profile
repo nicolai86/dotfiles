@@ -57,9 +57,6 @@ alias redc="red be rails c"
 alias ssh_rmate="ssh -R 52698:localhost:52698 $1"
 
 export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$PATH:$HOME/.tick/tick
-
-. ~/.tick/tickrc
 
 export PATH="/Users/nicolai86/.rbenv/shims:${PATH}"
 export PATH="$PATH:/Applications/terminal-notifier.app/Contents/MacOS"
@@ -86,5 +83,5 @@ bind '"\C-w":backward-kill-word'
 bind '\C-w:unix-filename-rubout'
 PATH="$PATH:$GOPATH/bin"
 
-# shisha workflow
-export SHISHA_API_TOKEN=yxMKJY4eBWCHEwLj8zAAVhXoxhbiDh
+# env
+source $HOME/.env
