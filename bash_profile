@@ -85,3 +85,6 @@ PATH="$PATH:$GOPATH/bin"
 
 # env
 source $HOME/.env
+
+# perlbrew
+source ~/perl5/perlbrew/etc/bashrc
