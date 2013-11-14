@@ -162,9 +162,9 @@
 		<string>@~←</string>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>394 374 924 485 0 0 1920 1178 </string>
+	<string>150 132 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>130 66 1277 542 0 0 1680 1028 </string>
+	<string>680 9 990 607 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_EDCD03D1-DC34-43F8-B291-FC1F0A4853D2</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -481,6 +481,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x7f-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x1B 0x08</string>
 				</dict>
 				<key>0x9-0x40000</key>
 				<dict>
@@ -961,6 +968,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
@@ -968,7 +977,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-11-09T20:12:22Z</date>
+	<date>2013-11-13T19:34:51Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1020,6 +1029,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131108</string>
+	<string>1.0.0.20131109</string>
 </dict>
 </plist>
