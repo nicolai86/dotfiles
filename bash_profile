@@ -56,7 +56,7 @@ alias red="RAILS_ENV=development"
 alias redc="red be rails c"
 alias ssh_rmate="ssh -R 52698:localhost:52698 $1"
 
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PATH="/Users/nicolai86/.rbenv/shims:${PATH}"
 export PATH="$PATH:/Applications/terminal-notifier.app/Contents/MacOS"
