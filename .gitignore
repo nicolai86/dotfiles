@@ -1,0 +1,12 @@
+.DS_Store
+
+# rails/ ruby related stuff
+config/database.yml
+**/*.log
+**/*.sqlite3
+pkg
+log
+tmp
+
+# vagrant stuff
+.vagrant

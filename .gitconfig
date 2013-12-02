@@ -1,0 +1,67 @@
+[user]
+  name = Raphael Randschau
+  email = nicolai86@me.com
+  signingkey = EB7AA064
+[core]
+  editor = vim
+  excludesfile = /Users/nicolai86/.gitignore
+  autocrlf = input
+  safecrlf = false
+  pager = less -r
+[color]
+  ui = true
+[gc]
+  auto = 1
+[rerere]
+  enabled = true
+[github]
+  user = nicolai86
+  token = c377bb5916508efcf3e5c65b94c53e73de5c8fcf
+[alias]
+  aa = add --all
+  ca = commit -a
+  co = checkout
+  st = status -sb
+  br = branch
+  ai = add --interactive
+  hist = log --pretty=format:'* %h - %s (%ar) <%an>'
+  l = log --abbrev-commit --date=relative
+  head = !git l -1
+  h = !git head
+  amend = commit --amend
+[log]
+  date=short
+[format]
+  pretty=format:* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+[branch "develop"]
+  remote = origin
+  merge = refs/heads/develop
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[credential]
+  helper = osxkeychain
+[commit]
+  template = /Users/nicolai86/.gitmessage.txt
+[filter "dater"]
+  smudge = expand_date
+  clean = perl -pe \"s/\\\\\\$Date[^\\\\\\$]*\\\\\\$/\\\\\\$Date\\\\\\$/\"
+[push]
+  default = current
+[diff]
+  external = opendiff
+  tool = opendiff
+[merge]
+  tool = opendiff
