@@ -62,7 +62,7 @@ export PATH="/Users/nicolai86/.rbenv/shims:${PATH}"
 export PATH="$PATH:/Applications/terminal-notifier.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/share/npm/bin"
 
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # patched ruby
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_FREE_MIN=500000
