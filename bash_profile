@@ -22,7 +22,7 @@ ruby_version() {
   echo $(rbenv version) | awk '{print $1}'
 }
 HOSTNAME=$(scutil --get ComputerName)
-PS1="\[\e[0;37m\]$HOSTNAME@\\W \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] 〉"
+PS1="\[\e[0;37m\]$HOSTNAME@\\W \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # do not directly execute last commands
 shopt -s histverify
@@ -65,8 +65,6 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # patched ruby
 export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_FREE_MIN=500000
-export RUBY_HEAP_MIN_SLOTS=40000
 
 # traq
 . $HOME/.traqrc
@@ -87,4 +85,6 @@ PATH="$PATH:$GOPATH/bin"
 source $HOME/.env
 
 # perlbrew
-source ~/perl5/perlbrew/etc/bashrc
+# source ~/perl5/perlbrew/etc/bashrc
+export PERL5LIB=~/perl5/lib/perl5
+export PATH=~/perl5/bin:$PATH
