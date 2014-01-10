@@ -12,3 +12,5 @@ tmp
 # vagrant stuff
 .vagrant
 
+# bower
+bower_components

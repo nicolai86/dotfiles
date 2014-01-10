@@ -23,12 +23,12 @@
   co = checkout
   st = status -sb
   br = branch
-  ai = add --interactive
+  df = diff --word-diff
+  amend = commit --amend
   hist = log --pretty=format:'* %h - %s (%ar) <%an>'
-  l = log --abbrev-commit --date=relative
+  l = log --oneline --decorate --graph
   head = !git l -1
   h = !git head
-  amend = commit --amend
 [log]
   date=short
 [format]
