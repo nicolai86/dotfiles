@@ -23,8 +23,10 @@
   co = checkout
   st = status -sb
   br = branch
-  hist = log --pretty=format:'* %h - %s (%ar) <%an>'
+  df = diff --word-diff
   amend = commit --amend
+  hist = log --pretty=format:'* %h - %s (%ar) <%an>'
+  l = log --oneline --decorate --graph
 [log]
   date=short
 [format]
