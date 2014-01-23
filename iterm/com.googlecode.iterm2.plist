@@ -116,6 +116,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -154,6 +156,23 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>302</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
 	<key>NSUserKeyEquivalents</key>
 	<dict>
 		<key>Select Next Tab</key>
@@ -162,9 +181,11 @@
 		<string>@~←</string>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>150 132 924 485 0 0 1680 1028 </string>
+	<string>151 135 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>680 9 990 607 0 0 1680 1028 </string>
+	<string>134 400 570 373 0 0 1680 1028 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>250 73 570 373 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_EDCD03D1-DC34-43F8-B291-FC1F0A4853D2</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -363,7 +384,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/fish --login</string>
+			<string>/bin/bash -li</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -387,7 +408,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -776,7 +797,7 @@
 				<key>editor</key>
 				<string>com.sublimetext.2</string>
 				<key>text</key>
-				<string>/usr/local/bin/subl \1:\2</string>
+				<string>/usr/bin/subl \1:\2</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -969,7 +990,7 @@
 	<key>RightOption</key>
 	<integer>3</integer>
 	<key>SUAutomaticallyUpdate</key>
-	<false/>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
@@ -977,7 +998,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-11-13T19:34:51Z</date>
+	<date>2014-01-23T20:09:09Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1029,6 +1050,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131109</string>
+	<string>1.0.0.20140112</string>
 </dict>
 </plist>
