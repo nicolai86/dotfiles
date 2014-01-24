@@ -61,6 +61,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/Users/nicolai86/.rbenv/shims:${PATH}"
 export PATH="$PATH:/Applications/terminal-notifier.app/Contents/MacOS"
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="bin:$PATH"
 
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # patched ruby
