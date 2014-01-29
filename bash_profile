@@ -1,3 +1,25 @@
+# bash history setup
+
+HISTSIZE=9000
+HISTFILESIZE=$HISTSIZE
+HISTCONTROL=ignorespace:ignoredups
+
+history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+_bash_history_sync() {
+  builtin history -a         #1
+  HISTFILESIZE=$HISTSIZE     #2
+  builtin history -c         #3
+  builtin history -r         #4
+}
+
+PROMPT_COMMAND=_bash_history_sync
+
+shopt -s histverify
+
 # bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -25,7 +47,6 @@ HOSTNAME=$(scutil --get ComputerName)
 PS1="\[\e[0;37m\]$HOSTNAME@\\W \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # do not directly execute last commands
-shopt -s histverify
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Applications/wkhtmltopdf/bin/wkhtmltopdf.app/Contents/MacOS:$PATH
