@@ -37,7 +37,6 @@ ruby_version() {
   echo $(rbenv version) | awk '{print $1}'
 }
 HOSTNAME=$(scutil --get ComputerName)
-35
 PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]$(date +"%H:%M")\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # do not directly execute last commands
