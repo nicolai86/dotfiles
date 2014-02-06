@@ -1,22 +1,15 @@
 # bash history setup
 
-HISTSIZE=9000
-HISTFILESIZE=$HISTSIZE
-HISTCONTROL=ignorespace:ignoredups
+export HISTSIZE=9000
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignorespace:ignoredups
 
-history() {
-  _bash_history_sync
-  builtin history "$@"
+cd() {
+  builtin cd "$@"
+  echo -e "\033]50;CurrentDir=$OLDPWD^G"
 }
 
-_bash_history_sync() {
-  builtin history -a         #1
-  HISTFILESIZE=$HISTSIZE     #2
-  builtin history -c         #3
-  builtin history -r         #4
-}
-
-PROMPT_COMMAND=_bash_history_sync
+export CDPATH=".:~:~/Workspace"
 
 shopt -s histverify
 
@@ -31,7 +24,7 @@ export LC_ALL=en_US.UTF-8
 
 export GOPATH=$HOME/go
 
-manopt() { man $1 |sed 's/.\x08//g'|sed -n "/^\s\+-\+$2\b/,/^\s*$/p"|sed '$d;';} 
+manopt() { man $1 |sed 's/.\x08//g'|sed -n "/^\s\+-\+$2\b/,/^\s*$/p"|sed '$d;';}
 
 # PS_1
 function parse_git_branch {
@@ -44,7 +37,8 @@ ruby_version() {
   echo $(rbenv version) | awk '{print $1}'
 }
 HOSTNAME=$(scutil --get ComputerName)
-PS1="\[\e[0;37m\]$HOSTNAME@\\W \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
+35
+PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]$(date +"%H:%M")\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # do not directly execute last commands
 
