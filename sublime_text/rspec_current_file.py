@@ -8,12 +8,16 @@ class RspecCurrentFileCommand(sublime_plugin.WindowCommand):
     return sublime.get_clipboard()
 
   def execute_spec(self, spec_path, path_suffix):
+    home = expanduser("~")
+    print(spec_path)
     if "spec" in spec_path:
       print("Looks like a spec. Running rspec")
-      home = expanduser("~")
       spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "rspec " + spec_path + path_suffix]
       proc = subprocess.Popen(spec_command, stdout = subprocess.PIPE)
-      print(proc.communicate())
+    elif "_test.go" in spec_path:
+      print("Looks like a go test. Running go test")
+      spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "go test"]
+      proc = subprocess.Popen(spec_command, stdout = subprocess.PIPE)
     else:
       print("No spec file. Ignoring.")
 
@@ -27,6 +31,7 @@ class RspecCurrentFileCommand(sublime_plugin.WindowCommand):
 class RspecCurrentLineInFile(RspecCurrentFileCommand):
   def run(self):
     spec_path = self.spec_path()
+    print(spec_path)
     if not spec_path:
       print("No file open. Ignoring")
       return
