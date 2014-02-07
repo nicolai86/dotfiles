@@ -24,8 +24,6 @@ export LC_ALL=en_US.UTF-8
 
 export GOPATH=$HOME/go
 
-manopt() { man $1 |sed 's/.\x08//g'|sed -n "/^\s\+-\+$2\b/,/^\s*$/p"|sed '$d;';}
-
 # PS_1
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
@@ -37,7 +35,7 @@ ruby_version() {
   echo $(rbenv version) | awk '{print $1}'
 }
 HOSTNAME=$(scutil --get ComputerName)
-PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]$(date +"%H:%M")\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
+PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]\A\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # do not directly execute last commands
 
@@ -57,13 +55,6 @@ export JRUBY_OPTS=-X+C
 export RBXOPT=-X19
 
 # shorthands
-alias be="bundle exec $1"
-alias bu="bundle update $1"
-alias bi="bundle install"
-alias migrate-app="bundle exec rake db:migrate"
-alias start-app="bundle exec foreman start"
-alias test-app="bundle exec rake test RAILS_ENV=test"
-alias deploy-app="bundle exec mina deploy"
 alias ret="RAILS_ENV=test"
 alias retc="ret be rails c"
 alias red="RAILS_ENV=development"
