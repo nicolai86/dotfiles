@@ -9,14 +9,14 @@ export LC_ALL=en_US.UTF-8
 
 export PATH=$PATH:$HOME/.bin
 
-# time tracking
-source $HOME/.dotfiles/bash/traq.sh
-
 # PLs
 source $HOME/.dotfiles/bash/go.sh
 source $HOME/.dotfiles/bash/ruby.sh
 source $HOME/.dotfiles/bash/java.sh
 source $HOME/.dotfiles/bash/perl.sh
+
+# time tracking
+source $HOME/.dotfiles/bash/traq.sh
 
 # misc
 source $HOME/.dotfiles/bash/brew.sh
