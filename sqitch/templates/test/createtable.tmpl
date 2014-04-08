@@ -1,0 +1,23 @@
+-- Test [% change %]
+SET client_min_messages TO warning;
+CREATE EXTENSION IF NOT EXISTS pgtap;
+RESET client_min_messages;
+
+BEGIN;
+SELECT no_plan();
+-- SELECT plan(1);
+
+SET search_path TO [% IF schema %][% schema %],[% END %]public;
+
+SELECT has_table('[% table or change %]');
+SELECT has_pk( '[% table or change %]' );
+
+[% FOREACH col IN column -%]
+SELECT has_column(        '[% table or change %]', '[% col %]' );
+SELECT col_type_is(       '[% table or change %]', '[% col %]', '[% type.item( loop.index ) or 'text' %]' );
+SELECT col_not_null(      '[% table or change %]', '[% col %]' );
+SELECT col_hasnt_default( '[% table or change %]', '[% col %]' );
+
+[% END %]
+SELECT finish();
+ROLLBACK;
