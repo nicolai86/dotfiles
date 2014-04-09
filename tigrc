@@ -1,3 +1,6 @@
+# color deviation from defaults
+
 color id green default
 color blame-id yellow default
 color date yellow default
+color graph-commit cyan default
