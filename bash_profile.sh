@@ -3,6 +3,8 @@ if [[ -e "$HOME/.env" ]]; then
   source $HOME/.env
 fi
 
+export EDITOR=subl
+
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
