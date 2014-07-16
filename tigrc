@@ -4,3 +4,6 @@ color id green default
 color blame-id yellow default
 color date yellow default
 color graph-commit cyan default
+
+bind status + !git commit --amend
+bind stage Enter :/^@@
