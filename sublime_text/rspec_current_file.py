@@ -37,6 +37,7 @@ class RspecCurrentFileCommand(sublime_plugin.WindowCommand):
 class TestMethodMatcher(object):
   def __init__(self):
     self.matchers = [TestMethodMatcher.UnitTest]
+
   def find_first_match_in(self, test_file_content):
     for matcher in self.matchers:
       test_name = matcher.find_first_match(test_file_content)
@@ -56,6 +57,14 @@ class TestMethodMatcher(object):
         return "test_%s" % test_name.replace("\"", "\\\"").replace(" ", "_").replace("'", "\\'")
 
       return None
+
+  class MinitestSpec(object):
+    @staticmethod
+    def find_first_match(test_file_content):
+      print("foo")
+      # spec_count = count "it" before current line
+      # name = "test_%04d_%s" % [ spec_count + 1, desc ]
+
 
 class RspecCurrentLineInFile(RspecCurrentFileCommand):
   def run(self):

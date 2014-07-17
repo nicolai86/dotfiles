@@ -8,7 +8,6 @@ pkg
 log
 tmp
 .bundle
-bin/                 # binstubs
 
 # vagrant stuff
 .vagrant
