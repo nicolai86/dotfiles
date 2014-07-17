@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -149,7 +149,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
+	<string>~/.dotfiles/iterm</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -181,9 +181,11 @@
 		<string>@~←</string>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>151 135 924 485 0 0 1680 1028 </string>
+	<string>385 330 924 485 0 0 1680 1027 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>134 400 570 373 0 0 1680 1028 </string>
+	<string>57 0 1620 503 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>250 73 570 373 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_EDCD03D1-DC34-43F8-B291-FC1F0A4853D2</key>
@@ -998,7 +1000,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-23T20:09:09Z</date>
+	<date>2014-07-11T14:03:04Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1050,6 +1052,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140112</string>
+	<string>1.0.0.20140629</string>
 </dict>
 </plist>
