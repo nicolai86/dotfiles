@@ -36,13 +36,39 @@ class RspecCurrentFileCommand(sublime_plugin.WindowCommand):
 
 class TestMethodMatcher(object):
   def __init__(self):
-    self.matchers = [TestMethodMatcher.UnitTest]
+    self.matchers = [ TestMethodMatcher.UnitTest, TestMethodMatcher.Minitest ]
 
   def find_first_match_in(self, test_file_content):
     for matcher in self.matchers:
-      test_name = matcher.find_first_match(test_file_content)
+      test_name = matcher.find_first_match( test_file_content )
       if test_name:
         return test_name
+
+  class Minitest(object):
+    @staticmethod
+    def find_first_match(test_file_content):
+      text = test_file_content[::-1]
+      context_start = text.rfind( "describe" )
+      if context_start == -1:
+        context_start = 0
+
+      text = text[context_start:-1]
+
+      count = 0
+      start = text.find( 'it "' )
+      while start != -1:
+        start = text.find( 'it "', start + 1)
+        count += 1
+
+      if count == 0:
+        return None
+
+      test_start = text.rfind( 'it "' )
+      test_end = text.find('" do', test_start)
+
+      test = text[test_start+3:test_end].strip()[1:]
+      test_name = "test_%04d_%s" % (count, test)
+      return test_name
 
   class UnitTest(object):
     @staticmethod
@@ -57,13 +83,6 @@ class TestMethodMatcher(object):
         return "test_%s" % test_name.replace("\"", "\\\"").replace(" ", "_").replace("'", "\\'")
 
       return None
-
-  class MinitestSpec(object):
-    @staticmethod
-    def find_first_match(test_file_content):
-      print("foo")
-      # spec_count = count "it" before current line
-      # name = "test_%04d_%s" % [ spec_count + 1, desc ]
 
 
 class RspecCurrentLineInFile(RspecCurrentFileCommand):
@@ -83,12 +102,12 @@ class RspecCurrentLineInFile(RspecCurrentFileCommand):
       self.execute_spec(file_path, ":" + str(line))
 
     elif "test.rb" in file_path:
-      # TODO construct test name
       line_region = active_view.line(region)
       text_string = active_view.substr(sublime.Region(region.begin() - 2000, line_region.end()))
-      text_string = text_string.replace("\n", "\\N")
-      text_string = text_string[::-1]
-      test_name = TestMethodMatcher().find_first_match_in(text_string)
-      print(test_name)
+      if text_string != None:
+        text_string = text_string.replace("\n", "\\N")
+        test_name = TestMethodMatcher().find_first_match_in( text_string[::-1] )
 
-      self.execute_spec(file_path, " -n " + test_name)
+        self.execute_spec('"' + file_path + '"', " -n '" + test_name + "'")
+      else:
+        print("no test content ...")
