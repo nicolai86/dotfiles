@@ -58,3 +58,5 @@
   default = current
 [merge]
   tool = opendiff
+[tag]
+	sort = version:refname
