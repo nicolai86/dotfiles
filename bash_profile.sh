@@ -12,6 +12,8 @@ export LC_ALL=en_US.UTF-8
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.dotfiles/ruby
 
+export CURL_CA_BUNDLE=$HOME/.dotfiles/ca-bundle.crt
+
 # PLs
 source $HOME/.dotfiles/bash/go.sh
 source $HOME/.dotfiles/bash/ruby.sh
@@ -26,6 +28,9 @@ source $HOME/.dotfiles/bash/brew.sh
 source $HOME/.dotfiles/bash/npm.sh
 source $HOME/.dotfiles/bash/git.sh
 source $HOME/.dotfiles/bash/aliases.sh
+
+# ask for pending background jobs b4 terminating
+# checkjobs 
 
 # bash generica
 export HISTSIZE=9000
