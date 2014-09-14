@@ -19,6 +19,7 @@ source $HOME/.dotfiles/bash/go.sh
 source $HOME/.dotfiles/bash/ruby.sh
 source $HOME/.dotfiles/bash/java.sh
 source $HOME/.dotfiles/bash/perl.sh
+source $HOME/.dotfiles/bash/python.sh
 
 # time tracking
 source $HOME/.dotfiles/bash/traq.sh
@@ -30,7 +31,7 @@ source $HOME/.dotfiles/bash/git.sh
 source $HOME/.dotfiles/bash/aliases.sh
 
 # ask for pending background jobs b4 terminating
-# checkjobs 
+# checkjobs
 
 # bash generica
 export HISTSIZE=9000
