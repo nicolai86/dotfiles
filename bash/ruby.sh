@@ -2,6 +2,8 @@
 export JRUBY_OPTS=-X+C
 export RBXOPT=-X19
 
+export BUNDLE_JOBS=6
+
 # ruby 1.9 - 2.0 GC settings
 export RUBY_GC_MALLOC_LIMIT=2147483648  # 2 gb
 # export RUBY_HEAP_MIN_SLOTS=$(( 408*1500 ))
