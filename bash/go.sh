@@ -1,6 +1,10 @@
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 export GOMAXPROCS=8
+export CDPATH=$GOPATH/src/github.com:$GOPATH/src/code.google.com/p
+
+# much like bundle open
+gocd () { cd `go list -f '{{.Dir}}' $1` }
 
 # ensure proper GOPATH setup
 if [[ ! -d "$GOPATH/pkg" ]]; then
