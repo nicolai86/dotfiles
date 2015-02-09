@@ -25,8 +25,7 @@
   br = branch
   df = diff --word-diff
   amend = commit --amend
-  hist = log --pretty=format:'* %h - %s (%ar) <%an>'
-  l = log --oneline --decorate --graph
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
 [log]
   date=short
 [format]
