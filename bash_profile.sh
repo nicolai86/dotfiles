@@ -1,3 +1,4 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # env
 if [[ -e "$HOME/.env" ]]; then
   source $HOME/.env

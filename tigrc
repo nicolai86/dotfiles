@@ -1,9 +1,10 @@
 # color deviation from defaults
 
 color id green default
-color blame-id yellow default
+# color blame-id yellow default
 color date yellow default
 color graph-commit cyan default
 
-bind status + !git commit --amend
-bind stage Enter :/^@@
+bind generic + !git commit --amend
+bind main B !git rebase -i %(commit)
+bind status P !git push origin
