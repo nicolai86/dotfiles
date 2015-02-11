@@ -1,4 +1,9 @@
 # env
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+function fkill () {
+  ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
+}
 if [[ -e "$HOME/.env" ]]; then
   source $HOME/.env
 fi
@@ -71,3 +76,5 @@ PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]\A\[\e[0;37m\]] \[\e[0;35m\]\$(parse
 # stty werase undef
 bind '"\C-w":backward-kill-word'
 bind '\C-w:unix-filename-rubout'
+
+export HOMEBREW_GITHUB_API_TOKEN=8b0ecdbf3ae535eb7299c069621060b98a19fa45
