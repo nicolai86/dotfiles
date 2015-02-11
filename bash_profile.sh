@@ -1,3 +1,4 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
