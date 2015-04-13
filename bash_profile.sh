@@ -1,7 +1,5 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# env
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
+# en
 function fkill () {
   ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
 }
@@ -10,6 +8,8 @@ if [[ -e "$HOME/.env" ]]; then
 fi
 
 export EDITOR=subl
+export VISUAL=vim
+
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -69,7 +69,7 @@ parse_git_dirty() {
 }
 # determine ruby version from rbenv
 ruby_version() {
-  echo $(rbenv version) | awk '{print $1}'
+  echo $(ruby --version) | awk '{print $2}'
 }
 HOSTNAME=$(scutil --get ComputerName)
 PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]\A\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "

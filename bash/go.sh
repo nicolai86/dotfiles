@@ -2,7 +2,7 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/go-src/bin:$GOPATH/bin:$PATH
 export GOMAXPROCS=8
 export CDPATH=$GOPATH/src/github.com:$GOPATH/src/code.google.com/p
-export PATH=/usr/local/Cellar/go/1.4/libexec/bin/:$PATH
+export PATH=/usr/local/Cellar/go/1.4/libexec/bin:$PATH
 
 # much like bundle open
 function gocd () {
