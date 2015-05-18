@@ -72,7 +72,7 @@ ruby_version() {
   echo $(ruby --version) | awk '{print $2}'
 }
 HOSTNAME=$(scutil --get ComputerName)
-PS1="\[\e[0;37m\]$HOSTNAME@\\W [\[\e[0;36m\]\A\[\e[0;37m\]] \[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
+PS1="\[\e[0;37m\]$HOSTNAME@\\W\[\e[0;35m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0;31m\]\$(ruby_version)\[\e[0;37m\] # "
 
 # stty werase undef
 bind '"\C-w":backward-kill-word'
