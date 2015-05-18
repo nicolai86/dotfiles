@@ -8,7 +8,9 @@
   autocrlf = input
   safecrlf = false
   pager = less -r
-	quotepath = false
+  quotepath = false
+[rebase]
+  autosquash = true
 [color]
   ui = true
 [gc]
@@ -59,4 +61,4 @@
 [merge]
   tool = opendiff
 [tag]
-	sort = version:refname
+  sort = version:refname
