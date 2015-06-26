@@ -1,6 +1,8 @@
 set nocompatible        " use vim defaults
 set scrolloff=3         " keep 3 lines when scrolling
 set noai                " set auto-indenting on for programming
+set wrap 
+set textwidth=80
 
 set expandtab
 set shiftwidth=2

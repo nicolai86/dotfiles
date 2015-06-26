@@ -29,6 +29,7 @@
   df = diff --word-diff
   amend = commit --amend
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+	home = rev-parse --show-toplevel
 [log]
   date=short
 [format]
