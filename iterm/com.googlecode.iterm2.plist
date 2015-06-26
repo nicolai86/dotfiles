@@ -411,6 +411,8 @@
 		<key>Select Previous Tab</key>
 		<string>@~←</string>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1112 292 445 103 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>197 271 924 485 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
@@ -986,11 +988,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>MesloLGL-RegularForPowerline 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>MesloLGM-RegularForPowerline 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>

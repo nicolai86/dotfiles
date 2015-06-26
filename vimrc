@@ -45,3 +45,8 @@ vnoremap > >gv
 let mapleader = ","
 
 map <leader>t :CommandT<CR>
+
+execute pathogen#infect()
+filetype plugin indent on
+" :Tmuxline vim_statusline_1
+"
