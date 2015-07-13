@@ -9,10 +9,10 @@ export RUBY_GC_MALLOC_LIMIT=2147483648  # 2 gb
 # export RUBY_HEAP_MIN_SLOTS=$(( 408*1500 ))
 # export RUBY_FREE_MIN=32768
 
-source /usr/local/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/chruby.sh
 
 # https://rvm.io/binaries/osx/10.10/x86_64/
-chruby 2.2.1
+chruby 2.2.2
 
 # requires "brew install curl-ca-bundle"
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
