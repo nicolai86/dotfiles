@@ -1,3 +1,4 @@
+#!/bin/bash
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export GOMAXPROCS=8
@@ -6,7 +7,7 @@ export PATH=/usr/local/Cellar/go/1.4.2/libexec/bin:$PATH
 
 # much like bundle open
 function gocd () {
-  cd $(go list -f '{{.Dir}}' $1)
+  cd "$(go list -f '{{.Dir}}' "$1")"
 }
 
 # ensure proper GOPATH setup

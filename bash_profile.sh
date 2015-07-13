@@ -1,10 +1,7 @@
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#!/bin/bash
 # en
-function fkill () {
-  ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
-}
 if [[ -e "$HOME/.env" ]]; then
-  source $HOME/.env
+  source "$HOME/.env"
 fi
 
 export EDITOR=subl
@@ -21,19 +18,19 @@ export PATH=$PATH:$HOME/.dotfiles/ruby
 export CURL_CA_BUNDLE=$HOME/.dotfiles/ca-bundle.crt
 
 # PLs
-source $HOME/.dotfiles/bash/go.sh
-source $HOME/.dotfiles/bash/ruby.sh
-source $HOME/.dotfiles/bash/java.sh
-source $HOME/.dotfiles/bash/python.sh
+source "$HOME/.dotfiles/bash/go.sh"
+source "$HOME/.dotfiles/bash/ruby.sh"
+source "$HOME/.dotfiles/bash/java.sh"
+source "$HOME/.dotfiles/bash/python.sh"
 
 # time tracking
-source $HOME/.dotfiles/bash/traq.sh
+source "$HOME/.dotfiles/bash/traq.sh"
 
 # misc
-source $HOME/.dotfiles/bash/brew.sh
-source $HOME/.dotfiles/bash/npm.sh
-source $HOME/.dotfiles/bash/git.sh
-source $HOME/.dotfiles/bash/aliases.sh
+source "$HOME/.dotfiles/bash/brew.sh"
+source "$HOME/.dotfiles/bash/npm.sh"
+source "$HOME/.dotfiles/bash/git.sh"
+source "$HOME/.dotfiles/bash/aliases.sh"
 
 # ask for pending background jobs b4 terminating
 # checkjobs
@@ -55,9 +52,7 @@ cd() {
 export CDPATH=".:~:~/Workspace"
 
 # bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
 
 # PS_1
 parse_git_branch() {

@@ -1,3 +1,4 @@
+#!/bin/bash
 # JRuby, Rubinius
 export JRUBY_OPTS=-X+C
 export RBXOPT=-X19
@@ -19,17 +20,13 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export PATH=$PATH:./bin
 
-# list ruby files by size
-alias ruby-files-by-size="find . -iname '*.rb' -type f -exec wc -l {} \; | sort -rn"
-alias ruby-associations="ack 'has_many' -c | awk -F ':' '{print $2,$1}' | grep -v '0' | sort -rn"
-
 # instruct minitest/spec not to mix in assertions to object
 export MT_NO_EXPECTATIONS=yes
 
 uninstall_gems() {
-  list=`gem list --no-versions`
+  list=$(gem list --no-versions)
   for gem in $list; do
-    gem uninstall $gem -aIx
+    gem uninstall "$gem" -aIx
   done
   gem list
   gem install bundler
