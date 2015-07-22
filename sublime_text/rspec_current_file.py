@@ -5,19 +5,19 @@ from os.path import expanduser
 
 class RspecCurrentFileCommand(sublime_plugin.WindowCommand):
   def spec_path(self):
-    self.window.run_command("copy_relative_path")
-    return sublime.get_clipboard()
+    view = self.window.active_view()
+    return view.file_name()
 
   def execute_spec(self, spec_path, path_suffix):
     home = expanduser("~")
 
     if "spec.rb" in spec_path:
       print("Looks like a spec. Running rspec")
-      spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "rspec " + spec_path + path_suffix]
+      spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "rspec $(echo " + spec_path + "| sed s+$(pwd)/++g)" + path_suffix]
       proc = subprocess.Popen(spec_command, stdout = subprocess.PIPE)
     elif "test.rb" in spec_path:
       print("Looks like test unit. Running")
-      spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "ruby -I\"lib:test\" " + spec_path + path_suffix]
+      spec_command = ['/usr/bin/osascript', home + '/.dotfiles/osascript/write_iterm2.scpt', "ruby -I\"lib:test\" $(echo " + spec_path + "| sed s+$(pwd)/++g)" + path_suffix]
       proc = subprocess.Popen(spec_command, stdout = subprocess.PIPE)
     elif "_test.go" in spec_path:
       print("Looks like a go test. Running go test")
