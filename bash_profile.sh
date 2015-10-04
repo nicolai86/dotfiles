@@ -20,7 +20,6 @@ export CURL_CA_BUNDLE=$HOME/.dotfiles/ca-bundle.crt
 # PLs
 source "$HOME/.dotfiles/bash/go.sh"
 source "$HOME/.dotfiles/bash/ruby.sh"
-source "$HOME/.dotfiles/bash/java.sh"
 source "$HOME/.dotfiles/bash/python.sh"
 
 # time tracking
