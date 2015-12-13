@@ -70,4 +70,4 @@ bind '\C-w:unix-filename-rubout'
 
 export HOMEBREW_GITHUB_API_TOKEN=8b0ecdbf3ae535eb7299c069621060b98a19fa45
 
-source /Users/nicolai86/.iterm2_shell_integration.bash
+source $HOME/.iterm2_shell_integration.bash

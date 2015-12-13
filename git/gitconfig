@@ -63,3 +63,5 @@
   tool = opendiff
 [tag]
   sort = version:refname
+[tig]
+  tab-size = 2
