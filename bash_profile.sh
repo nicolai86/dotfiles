@@ -14,7 +14,6 @@ export LC_ALL=en_US.UTF-8
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.dotfiles/ruby
 
-export CURL_CA_BUNDLE=$HOME/.dotfiles/ca-bundle.crt
 
 # PLs
 source "$HOME/.dotfiles/bash/go.sh"
