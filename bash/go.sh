@@ -25,3 +25,7 @@ if [[ ! -d "$GOPATH/src" ]]; then
 fi
 
 alias gocover="go test -coverprofile=coverage.out && go tool cover -html=coverage.out"
+
+# ( echo "digraph G {" go list -f '{{range .Imports}}{{printf "\t%q -> %q;\n" $.ImportPath .}}{{end}}' \ $(go list -f '{{join .Deps " "}}' time) time echo "}" ) | dot -Tsvg -o time-deps.svg
+# go test $( go list -f '{{if (not .Goroot)}}{{.ImportPath}}{{end}}' $( go list -f '{{join .Deps " "}}' golang.org/x/oauth2 ) )
+# go list -e -f '{{with .Error}}{{.}}{{end}}' all package github.com/golang/oauth2: code in directory /Users/adg/src/github.com/golang/oauth2 expects import "golang.org/x/oauth2" ...
