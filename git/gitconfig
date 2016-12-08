@@ -1,7 +1,7 @@
 [user]
   name = Raphael Randschau
   email = nicolai86@me.com
-  signingkey = EB7AA064
+	signingkey = 1275A182
 [core]
   editor = vim
   excludesfile = /Users/nicolai86/.gitignore
@@ -38,7 +38,7 @@
   remote = origin
   merge = refs/heads/develop
 [url "git@github.com:"]
-  insteadOf = "gh:"
+#	insteadOf = https://github.com/
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 [url "git@gist.github.com:"]
@@ -51,6 +51,7 @@
   helper = osxkeychain
 [commit]
   template = /Users/nicolai86/.gitmessage.txt
+	gpgsign = true
 [filter "dater"]
   smudge = expand_date
   clean = perl -pe \"s/\\\\\\$Date[^\\\\\\$]*\\\\\\$/\\\\\\$Date\\\\\\$/\"
@@ -65,8 +66,10 @@
 [tig]
   tab-size = 2
 [filter "lfs"]
-  required = true
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
 [interactive]
   diffFilter = diff-highlight
+[gpg]
+	program = /usr/local/bin/gpg

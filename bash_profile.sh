@@ -25,6 +25,7 @@ source "$HOME/.dotfiles/bash/python.sh"
 source "$HOME/.dotfiles/bash/traq.sh"
 
 # misc
+source "$HOME/.dotfiles/bash/android.sh"
 source "$HOME/.dotfiles/bash/brew.sh"
 source "$HOME/.dotfiles/bash/npm.sh"
 source "$HOME/.dotfiles/bash/git.sh"
@@ -69,3 +70,13 @@ bind '\C-w:unix-filename-rubout'
 export HOMEBREW_GITHUB_API_TOKEN=8b0ecdbf3ae535eb7299c069621060b98a19fa45
 
 source $HOME/.iterm2_shell_integration.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/nicolai86/google-cloud-sdk/path.bash.inc ]; then
+  source '/Users/nicolai86/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/nicolai86/google-cloud-sdk/completion.bash.inc ]; then
+  source '/Users/nicolai86/google-cloud-sdk/completion.bash.inc'
+fi

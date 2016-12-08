@@ -10,8 +10,9 @@ export RUBY_GC_MALLOC_LIMIT=2147483648  # 2 gb
 # export RUBY_HEAP_MIN_SLOTS=$(( 408*1500 ))
 # export RUBY_FREE_MIN=32768
 
-eval "$(rbenv init -)"
 # https://rvm.io/binaries/osx/10.10/x86_64/
+eval "$(rbenv init -)"
+rbenv local 2.3.0
 
 # requires "brew install curl-ca-bundle"
 
