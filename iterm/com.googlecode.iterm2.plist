@@ -453,9 +453,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>532 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 52 918 512 0 0 1680 1027 </string>
+	<string>269 56 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 4 1676 1023 0 0 1680 1027 </string>
+	<string>4 654 570 373 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>225 173 570 373 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_EDCD03D1-DC34-43F8-B291-FC1F0A4853D2</key>
@@ -1214,6 +1214,10 @@
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
+	<key>NoSyncSecureCopyConnectionFailedWarning</key>
+	<true/>
+	<key>NoSyncSecureCopyConnectionFailedWarning_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>480721355.59237999</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -1286,7 +1290,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-11-12T19:05:47Z</date>
+	<date>2016-12-08T12:15:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
