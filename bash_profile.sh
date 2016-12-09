@@ -14,19 +14,19 @@ export LC_ALL=en_US.UTF-8
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.dotfiles/ruby
 
+source "$HOME/.dotfiles/bash/brew.sh"
 
 # PLs
 source "$HOME/.dotfiles/bash/go.sh"
-source "$HOME/.dotfiles/bash/ruby.sh"
+# source "$HOME/.dotfiles/bash/ruby.sh"
 source "$HOME/.dotfiles/bash/rust.sh"
-source "$HOME/.dotfiles/bash/python.sh"
+# source "$HOME/.dotfiles/bash/python.sh"
 
 # time tracking
 source "$HOME/.dotfiles/bash/traq.sh"
 
 # misc
 source "$HOME/.dotfiles/bash/android.sh"
-source "$HOME/.dotfiles/bash/brew.sh"
 source "$HOME/.dotfiles/bash/npm.sh"
 source "$HOME/.dotfiles/bash/git.sh"
 source "$HOME/.dotfiles/bash/aliases.sh"

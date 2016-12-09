@@ -1,2 +1,2 @@
 #!/bin/bash
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:$HOME/homebrew/sbin:$HOME/homebrew/bin
