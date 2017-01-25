@@ -1,11 +1,14 @@
-FROM irssi:0.8.20-alpine
+FROM irssi:1.0.0-alpine
 
 ENV IRSSI_OTR_VERSION 1.0.2
 
 USER root
+
+RUN apk --no-cache add curl
+
 RUN set -x \
   && mkdir -p /usr/include \
-  && wget "https://github.com/irssi/irssi/releases/download/${IRSSI_VERSION}/irssi-${IRSSI_VERSION}.tar.xz" -O /tmp/irssi.tar.xz \
+  && curl -L -o /tmp/irssi.tar.xz "https://github.com/irssi/irssi/releases/download/${IRSSI_VERSION}/irssi-${IRSSI_VERSION}.tar.xz" \
   && tar -xJf /tmp/irssi.tar.xz -C /usr/include \
   && mv /usr/include/irssi-${IRSSI_VERSION} /usr/include/irssi \
   && rm /tmp/irssi.tar.xz
@@ -29,7 +32,7 @@ RUN set -x \
     openssl-dev \
     perl-dev \
     pkgconf \
-  && wget https://github.com/cryptodotis/irssi-otr/archive/v${IRSSI_OTR_VERSION}.tar.gz -O /tmp/irssi-otr.tar.gz \
+  && curl -L -o /tmp/irssi-otr.tar.gz https://github.com/cryptodotis/irssi-otr/archive/v${IRSSI_OTR_VERSION}.tar.gz \
   && mkdir -p /usr/src \
   && tar -xzf /tmp/irssi-otr.tar.gz -C /usr/src \
   && cd /usr/src/irssi-otr-${IRSSI_OTR_VERSION} \
