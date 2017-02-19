@@ -1,4 +1,4 @@
-FROM irssi:1.0.0-alpine
+FROM nicolai86/irssi:1.0.1-alpine
 
 ENV IRSSI_OTR_VERSION 1.0.2
 
