@@ -9,4 +9,4 @@ alias t="theca"
 alias git_week="git log --since '7 day ago' --no-merges --author 'Raphael Randschau'"
 
 # docker shorthands
-alias irssi="docker run --rm -it --name irssi -e TERM -u $(id -u):$(id -g) --log-driver=none -v $HOME/.irssi:/home/user/.irssi irssi-otr:v1.0.2"
+alias irssi="docker run --rm -it --name irssi -e TERM -u $(id -u):$(id -g) --log-driver=none -v $HOME/.irssi:/home/user/.irssi nicolai86/irssi"
