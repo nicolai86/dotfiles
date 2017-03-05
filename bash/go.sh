@@ -1,10 +1,8 @@
 #!/bin/bash
 export GOPATH=$HOME/go
-export GOGC=400
 export PATH=$GOPATH/bin:$PATH
 export GOMAXPROCS=8
 export CDPATH=$GOPATH/src/github.com:$GOPATH/src/code.google.com/p
-export PATH=/usr/local/Cellar/go/$(go version | awk '{printf $3}' | sed s/go//)/libexec/bin:$(whoami)/go/bin:$PATH
 
 # much like bundle open
 function gocd () {

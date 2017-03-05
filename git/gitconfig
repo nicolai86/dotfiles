@@ -73,3 +73,5 @@
   diffFilter = diff-highlight
 [gpg]
 	program = /usr/local/bin/gpg
+[http]
+	cookiefile = /Users/nicolai86/.gitcookies
