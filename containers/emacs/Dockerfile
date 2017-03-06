@@ -1,7 +1,7 @@
 FROM golang:1.8-alpine
 
 RUN apk add --update --no-cache \
-  emacs git
+  emacs git editorconfig
 
 RUN go get -u golang.org/x/tools/cmd/goimports \
   golang.org/x/tools/cmd/godoc \
