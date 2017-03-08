@@ -28,6 +28,7 @@
 (defvar my-packages
   '(;;;; Go shit
     go-mode
+    go-guru
     go-eldoc
     go-autocomplete
 
@@ -101,6 +102,8 @@
 
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
 (require 'golint)
+
+(require 'go-guru)
 
 ;;Project Explorer
 (require 'project-explorer)
