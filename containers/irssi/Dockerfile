@@ -1,4 +1,4 @@
-FROM irssi:1.0.1-alpine
+FROM irssi:1.0.2-alpine
 
 ENV PERL_MM_USE_DEFAULT 1
 
@@ -9,7 +9,6 @@ RUN apk add -U make build-base perl-dev openssl openssl-dev \
   && cpan App::cpanminus \
   && cpanm \
     WWW::Shorten::TinyURL \
-    Net::Twitter \
     JSON::Any \
     Text::CharWidth \
   && apk del make build-base perl-dev openssl-dev
