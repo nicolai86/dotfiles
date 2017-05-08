@@ -9,5 +9,7 @@ bind generic + !git commit --amend
 bind main B !git rebase -i %(commit)
 bind status P !git push origin
 bind status p !git pull origin
+bind main <Ctrl-b> !?git rebase -i %(commit)
+
 
 set main-view-id = true
