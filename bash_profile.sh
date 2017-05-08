@@ -67,8 +67,6 @@ PS1="\[\e[0;37m\]$HOSTNAME@\\W\[\e[0;35m\] \$(parse_git_branch)\[\e[0;37m\] # "
 bind '"\C-w":backward-kill-word'
 bind '\C-w:unix-filename-rubout'
 
-export HOMEBREW_GITHUB_API_TOKEN=8b0ecdbf3ae535eb7299c069621060b98a19fa45
-
 source $HOME/.iterm2_shell_integration.bash
 
 # The next line updates PATH for the Google Cloud SDK.
