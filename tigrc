@@ -10,6 +10,6 @@ bind main B !git rebase -i %(commit)
 bind status P !git push origin
 bind status p !git pull origin
 bind main <Ctrl-b> !?git rebase -i %(commit)
-
+bind status <Ctrl-d> !git duet-commit 
 
 set main-view-id = true
