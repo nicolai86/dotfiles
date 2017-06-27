@@ -15,6 +15,7 @@ export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.dotfiles/ruby
 
 source "$HOME/.dotfiles/bash/brew.sh"
+source "$HOME/.dotfiles/bash/docker.sh"
 
 # PLs
 source "$HOME/.dotfiles/bash/go.sh"
