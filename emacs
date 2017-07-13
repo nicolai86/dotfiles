@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
+    (fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode fiplr))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,12 +42,15 @@
     smooth-scroll
     buffer-move
     window-number
+    fiplr
 
     ;;;; themes
     monokai-theme)
   "My packages!")
 
 (load-theme 'monokai t)
+
+(global-set-key (kbd "C-;") 'er/expand-region)
 
 ;; fetch the list of packages available
 (unless package-archive-contents
@@ -112,3 +115,44 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'editorconfig)
 (editorconfig-mode 1)
+
+                                        ; fiplr
+(require 'fiplr)
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
+(setq fiplr-ignored-globs
+      '((directories
+         ;; Version control
+         (".git"
+          ".svn"
+          ".hg"
+          ".bzr"
+          ;; NPM
+          "node_modules"
+          ;; Bower
+          "bower_components"
+          ;; Maven
+          "target"
+          ;; Python
+          "__pycache__"
+          ;; others
+          "tmp"
+          "vendor"
+          ))
+        (files
+         ;; Emacs
+         (".#*"
+          ;; Vim
+          "*~"
+          ;; Objects
+          "*.so"
+          "*.o"
+          "*.obj"
+          ;; Media
+          "*.jpg"
+          "*.png"
+          "*.gif"
+          "*.pdf"
+          ;; Archives
+          "*.gz"
+          "*.zip"))))
