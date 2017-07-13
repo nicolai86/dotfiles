@@ -1,0 +1,1 @@
+("~/Workspace/clients/costa/one/" "~/go/src/github.com/nicolai86/go-contentful-generator/" "~/.dotfiles/")
