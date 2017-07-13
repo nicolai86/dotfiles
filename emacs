@@ -156,3 +156,6 @@
           ;; Archives
           "*.gz"
           "*.zip"))))
+
+                                        ;
+(global-set-key (kbd "C-c d") 'kill-whole-line)
