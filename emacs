@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode fiplr))))
+    (sr-speedbar fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -43,6 +43,7 @@
     buffer-move
     window-number
     fiplr
+    sr-speedbar
 
     ;;;; themes
     monokai-theme)
@@ -159,3 +160,14 @@
 
                                         ;
 (global-set-key (kbd "C-c d") 'kill-whole-line)
+
+
+                                        ; speedbar
+(require 'sr-speedbar)
+;(speedbar 1)
+(speedbar-add-supported-extension ".go")
+(setq sr-speedbar-auto-refresh nil)
+
+                                        ; window management
+(windmove-default-keybindings)
+(sr-speedbar-open)
