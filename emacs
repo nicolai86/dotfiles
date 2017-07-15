@@ -171,3 +171,6 @@
                                         ; window management
 (windmove-default-keybindings)
 (sr-speedbar-open)
+
+                                        ; search compatability
+(global-set-key (kbd "<f4>") 'next-error)
