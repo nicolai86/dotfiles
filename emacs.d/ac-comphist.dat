@@ -1,4 +1,16 @@
-((("next-error" .
+((("nlinum-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("git-gutter-mode" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 1])
+  ("global-nlinum-mode" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("global-linum-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("world" .
+   [1 0 0 0 0])
+  ("hello" .
+   [1 0 0 0 0])
+  ("next-error" .
    [1 0 0 0 0 0 0 0 0 0])
   ("f4" .
    [1 0])
@@ -51,4 +63,20 @@
   ("main" .
    [5 0 0 0])
   ("speedbar" .
-   [2 0 0 0 0 0 0 0])))
+   [2 0 0 0 0 0 0 0])
+  ("git-gutter" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("git-gutter:base-file" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("global-git-gutter-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("linum-relative" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("git-gutter-fringe" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("require" .
+   [2 0 0 0 0 0 0])
+  ("load" .
+   [0 0 0 1])
+  ("nlinum-relative" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))

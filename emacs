@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sr-speedbar fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
+    (nlinum-relative sr-speedbar fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,6 +44,8 @@
     window-number
     fiplr
     sr-speedbar
+    git-gutter
+    nlinum
 
     ;;;; themes
     monokai-theme)
@@ -174,3 +176,18 @@
 
                                         ; search compatability
 (global-set-key (kbd "<f4>") 'next-error)
+
+                                        ; git-gutter
+(nlinum-mode)
+;; Preset `nlinum-format' for minimum width.
+(defun my-nlinum-mode-hook ()
+  (when nlinum-mode
+    (setq-local nlinum-format
+                (concat "%" (number-to-string
+                             ;; Guesstimate number of buffer lines.
+                             (ceiling (log (max 1 (/ (buffer-size) 80)) 10)))
+                        "d"))))
+(add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
+(global-linum-mode 1)
+(load "~/.emacs.d/utils/linum-highligth-current-line-number.el")
+(global-git-gutter-mode +1)
