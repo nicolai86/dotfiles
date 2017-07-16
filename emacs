@@ -6,8 +6,11 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
   (add-to-list 'package-archives
-   '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-   t)
+               '("melpa-stable" . "https://stable.melpa.org/packages/")
+               t)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/")
+               t)
   (package-initialize))
 
 (custom-set-variables
@@ -17,7 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (nlinum-relative sr-speedbar fiplr expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
+    (multiple-cursors nlinum sr-speedbar expand-region projectile editorconfig js2-mode exec-path-from-shell window-number buffer-move smooth-scroll project-explorer json-mode markdown-mode go-autocomplete go-eldoc go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,7 +45,6 @@
     smooth-scroll
     buffer-move
     window-number
-    fiplr
     sr-speedbar
     git-gutter
     nlinum
@@ -91,15 +93,15 @@
   (local-set-key (kbd "M-.") 'godef-jump))
 (add-hook 'go-mode-hook 'go-mode-setup)
 
-; ;;Custom Compile Command
-; (defun go-mode-setup ()
-;   (setq compile-command "go build -v && go test -v && go vet && golint && errcheck")
-;   (define-key (current-local-map) "\C-c\C-c" 'compile)
-;   (go-eldoc-setup)
-;   (setq gofmt-command "goimports")
-;   (add-hook 'before-save-hook 'gofmt-before-save)
-;   (local-set-key (kbd "M-.") 'godef-jump))
-; (add-hook 'go-mode-hook 'go-mode-setup)
+                                        ; ;;Custom Compile Command
+                                        ; (defun go-mode-setup ()
+                                        ;   (setq compile-command "go build -v && go test -v && go vet && golint && errcheck")
+                                        ;   (define-key (current-local-map) "\C-c\C-c" 'compile)
+                                        ;   (go-eldoc-setup)
+                                        ;   (setq gofmt-command "goimports")
+                                        ;   (add-hook 'before-save-hook 'gofmt-before-save)
+                                        ;   (local-set-key (kbd "M-.") 'godef-jump))
+                                        ; (add-hook 'go-mode-hook 'go-mode-setup)
 
 ;;Load auto-complete
 (ac-config-default)
@@ -166,7 +168,7 @@
 
                                         ; speedbar
 (require 'sr-speedbar)
-;(speedbar 1)
+                                        ;(speedbar 1)
 (speedbar-add-supported-extension ".go")
 (setq sr-speedbar-auto-refresh nil)
 
@@ -189,5 +191,16 @@
                         "d"))))
 (add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
 (global-linum-mode 1)
+
 (load "~/.emacs.d/utils/linum-highligth-current-line-number.el")
+
+(require 'git-gutter)
+(git-gutter:linum-setup)
+
 (global-git-gutter-mode +1)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
