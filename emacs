@@ -218,3 +218,8 @@
 
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
+
+(setq ignored-directories '("node_modules" "build" "vendor"))
+(eval-after-load "grep"
+  '(setq grep-find-ignored-directories (append grep-find-ignored-directories ignored-directories))
+)
