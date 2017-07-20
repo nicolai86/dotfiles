@@ -199,11 +199,11 @@
 (global-git-gutter-mode +1)
 
 (require 'multiple-cursors)
+(set-keyboard-coding-system nil)
+(setq mac-command-modifier 'super)
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
-; (global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m d") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m k") 'mc/skip-to-next-like-this)
-; (global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-x @ s d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-x @ s k") 'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 ; pasteboard integration osx
