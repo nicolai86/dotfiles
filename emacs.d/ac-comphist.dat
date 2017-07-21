@@ -1,4 +1,12 @@
-((("projectile-mode" .
+((("ignored-directories" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("append" .
+   [1 0 0 0 0 0])
+  ("node_modules" .
+   [2 0 0 0 0 0 0 0 0 0 0 0])
+  ("build" .
+   [1 0 0 0 0])
+  ("projectile-mode" .
    [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("projectile" .
    [1 0 0 0 0 0 0 0 0 0])
@@ -57,7 +65,7 @@
   ("Printf" .
    [0 1 1 0 1 0])
   ("Print" .
-   [0 0 0 0 1])
+   [0 0 1 0 1])
   ("Println" .
    [0 0 0 0 1 0 0])
   ("v" .
@@ -117,4 +125,8 @@
   ("global-visual-line-mode" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
   ("mc/skip-to-next-like-this" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])))
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("setq" .
+   [5 0 0 0])
+  ("grep-find-ignored-directories" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))

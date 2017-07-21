@@ -192,6 +192,7 @@
 (global-linum-mode 1)
 
 (load "~/.emacs.d/utils/linum-highligth-current-line-number.el")
+(add-to-list 'load-path "~/.emacs.d/utils")
 
 (require 'git-gutter)
 (git-gutter:linum-setup)
@@ -202,8 +203,8 @@
 (set-keyboard-coding-system nil)
 (setq mac-command-modifier 'super)
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
-(global-set-key (kbd "C-x @ s d") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-x @ s k") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c m d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m k") 'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 ; pasteboard integration osx
@@ -223,3 +224,8 @@
 (eval-after-load "grep"
   '(setq grep-find-ignored-directories (append grep-find-ignored-directories ignored-directories))
 )
+;(dired-omit-mode 1)
+;(setq dired-omit-files "^#\\|\\.$|build|node_modules|vendor")
+
+(require 'move-lines)
+(move-lines-binding)
