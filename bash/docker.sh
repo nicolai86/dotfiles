@@ -37,13 +37,13 @@ relies_on(){
 
 export DOCKER_REPO_PREFIX=nicolai86
 
-aws(){
-  docker run -it --rm \
-    -v "${HOME}/.aws:/root/.aws" \
-    --log-driver none \
-    --name aws \
-    ${DOCKER_REPO_PREFIX}/awscli "$@"
-}
+# aws(){
+#   docker run -it --rm \
+#     -v "${HOME}/.aws:/root/.aws" \
+#     --log-driver none \
+#     --name aws \
+#     ${DOCKER_REPO_PREFIX}/awscli "$@"
+# }
 
 # docker shorthands
 irssi() {
