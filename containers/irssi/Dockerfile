@@ -1,4 +1,4 @@
-FROM irssi:1.0.2-alpine
+FROM irssi:1.0.4-alpine
 
 ENV PERL_MM_USE_DEFAULT 1
 
