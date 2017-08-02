@@ -55,13 +55,16 @@ irssi() {
     -v "${HOME}/.irssi:/home/user/.irssi" \
     ${DOCKER_REPO_PREFIX}/irssi \
     chown -R user /home/user/.irssi
-
+  # go get github.com/nicolai86/utils/cli/fsnotify-terminal-notifier
+  fsnotify-terminal-notifier -watch ${HOME}/.irssi/fnotify &
+  pid=$!
   docker run --rm -it \
     -v /etc/localtime:/etc/localtime:ro \
     -v "${HOME}/.irssi:/home/user/.irssi" \
     --read-only \
     --name irssi \
     ${DOCKER_REPO_PREFIX}/irssi
+  kill -2 $pid
 }
 # alias irssi="docker run --rm -it --name irssi -e TERM -u $(id -u):$(id -g) --log-driver=none -v $HOME/.irssi:/home/user/.irssi nicolai86/irssi"
 alias irssi_sidebar="docker exec -it irssi perl .irssi/scripts/adv_windowlist.pl"
