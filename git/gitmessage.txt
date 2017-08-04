@@ -1,6 +1,6 @@
 
-# SUBJECT
-#
-# details
-#
-# [ticket: x]
+; SUBJECT
+;
+; details
+;
+; [ticket: x]

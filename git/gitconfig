@@ -9,6 +9,7 @@
   safecrlf = false
   pager = less -r
   quotepath = false
+	commentChar = ";"
 [rebase]
   autosquash = true
 [color]
