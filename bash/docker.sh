@@ -61,6 +61,7 @@ irssi() {
   docker run --rm -it \
     -v /etc/localtime:/etc/localtime:ro \
     -v "${HOME}/.irssi:/home/user/.irssi" \
+    -e TZ="$(sudo /usr/sbin/systemsetup -gettimezone | awk '{printf $3}')" \
     --read-only \
     --name irssi \
     ${DOCKER_REPO_PREFIX}/irssi
