@@ -1,7 +1,7 @@
 [user]
   name = Raphael Randschau
   email = nicolai86@me.com
-	signingkey = 1275A182
+	signingkey = 15DC8BE9
 [core]
   editor = vim
   excludesfile = /Users/nicolai86/.gitignore

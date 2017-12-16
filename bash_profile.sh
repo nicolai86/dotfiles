@@ -79,3 +79,6 @@ fi
 if [ -f /Users/nicolai86/google-cloud-sdk/completion.bash.inc ]; then
   source '/Users/nicolai86/google-cloud-sdk/completion.bash.inc'
 fi
+
+SSH_AUTH_SOCK=/Users/nicolai86/.gnupg/S.gpg-agent.ssh; 
+export SSH_AUTH_SOCK;
