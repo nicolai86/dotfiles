@@ -57,14 +57,8 @@ export CDPATH=".:~:~/Workspace"
 [ -f "$(brew --prefix)/etc/bash_completion" ] && source "$(brew --prefix)/etc/bash_completion"
 
 # PS_1
-parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-}
-parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
-}
 HOSTNAME=$(scutil --get ComputerName)
-PS1="\[\e[0;37m\]$HOSTNAME@\\W\[\e[0;35m\] \$(parse_git_branch)\[\e[0;37m\] # "
+PS1="\[\e[0;37m\]$HOSTNAME@\\W\[\e[0;35m\] \[\e[0;37m\] # "
 
 # stty werase undef
 bind '"\C-w":backward-kill-word'
