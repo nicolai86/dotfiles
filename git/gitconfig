@@ -1,7 +1,7 @@
 [user]
   name = Raphael Randschau
   email = nicolai86@me.com
-	signingkey = 15DC8BE9
+  signingkey =0x23BB04C0F3138D14 
 [core]
   editor = vim
   excludesfile = /Users/nicolai86/.gitignore
@@ -28,6 +28,7 @@
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   home = rev-parse --show-toplevel
   appraise = !/Users/nicolai86/go/bin/git-appraise
+  prune = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 [log]
   date=short
 [format]
